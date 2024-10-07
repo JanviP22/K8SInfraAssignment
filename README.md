@@ -45,7 +45,9 @@ Command to check node status:
 ### 2. Install Helm for Kubernetes Package Management:
 
 Steps:
+
 a. Install Helm:
+
  Helm is a package manager that simplifies the deployment of applications on Kubernetes. Used it to install tools like KEDA.
 Commands to install Helm:
 ```bash
@@ -56,6 +58,7 @@ Commands to install Helm:
    	sudo apt-get install helm
 ```
 b. Verify Helm installation:
+
  After installing Helm, verified it by checking its version:
 ```bash
    	helm version
@@ -64,7 +67,9 @@ b. Verify Helm installation:
 c. Install KEDA (Kubernetes Event-Driven Autoscaling):
 
 Steps:
+
 1. Add KEDA Helm repository and install KEDA:
+   
    Used Helm to install KEDA, which enables event-driven autoscaling in the cluster.
    Commands to install KEDA:
 ```bash
@@ -73,14 +78,19 @@ Steps:
    	helm install keda kedacore/keda --namespace keda --create namespace
 ```
 2. Verify KEDA installation:
+   
   To Check if the KEDA operator is running in the Kubernetes cluster.
 ```bash
 	kubectl get pods --namespace keda
 ```
-4. Create Kubernetes Deployment:
+### 3. Create Kubernetes Deployment:
+
 Steps:
-1. Defining a Kubernetes Deployment:
+
+a. Defining a Kubernetes Deployment:
+
 Created a deployment that uses a public Docker image (Node.js app).
+
 Deployment YAML:
 ```YAML
    apiVersion: apps/v1
@@ -111,8 +121,10 @@ Deployment YAML:
                memory: "400Mi"
 ```
 
-2. Created a Kubernetes Service:
+b. Created a Kubernetes Service:
+ 
 Exposed the deployment to the external port using a `NodePort` service.
+
 Service YAML:
 ```YAML
    apiVersion: v1
