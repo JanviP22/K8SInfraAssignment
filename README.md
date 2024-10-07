@@ -1,4 +1,4 @@
-Infrastructure Engineer Assignment
+# Infrastructure Engineer Assignment
 Objective Overview:
 Create a script (API or CLI) to automate Kubernetes cluster operations, including:
 1. Connecting to the cluster.
