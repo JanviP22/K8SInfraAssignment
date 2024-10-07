@@ -83,7 +83,7 @@ Steps:
 ```bash
 	kubectl get pods --namespace keda
 ```
-### 3. Create Kubernetes Deployment:
+### 3. Create Kubernetes Manifest Files:
 
 Steps:
 
@@ -102,25 +102,9 @@ b. Created a Kubernetes Service:
 Exposed the deployment to the external port using a `NodePort` service.
 
 Service YAML:
-```YAML
-   apiVersion: v1
-   kind: Service
-   metadata:
-     name: dev
-   spec:
-     ports:
-     - port: 3000
-       protocol: TCP
-       targetPort: 3000
-     selector:
-       app: dev
-     type: NodePort
-```
-3. Apply the configurations:
- Applied the deployment and service configurations using `kubectl` commands.
 ```bash
- 	kubectl apply -f dev-deploy.yaml
-   	kubectl apply -f dev_svc.yaml
+# Create the deployment
+kubectl apply -f dev_svc.yaml
 ```
 5. Setup KEDA Autoscaling (ScaledObject):
 Steps:
