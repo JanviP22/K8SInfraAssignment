@@ -19,7 +19,7 @@ I used VMware Workstation to create virtual environments. With the help of Vagra
 
 Vagrant command to provision VMs:
 ```bash
-	vagrant up
+vagrant up
 ```
 
 b. Install kubectl to interact with Kubernetes:
@@ -39,7 +39,7 @@ c. Check cluster status:
 After setting up the cluster, we can check the node status to verify that it's running properly.
 Command to check node status:
 ```bash
-	kubectl get nodes
+kubectl get nodes
 ```
 
 ### 2. Install Helm for Kubernetes Package Management:
@@ -52,17 +52,17 @@ a. Install Helm:
  
 Commands to install Helm:
 ```bash
-   	curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
-   	sudo apt-get install apt-transport-https --yes
-   	echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
-   	sudo apt-get update
-   	sudo apt-get install helm
+curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
+sudo apt-get install apt-transport-https --yes
+echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+sudo apt-get update
+sudo apt-get install helm
 ```
 b. Verify Helm installation:
 
  After installing Helm, verified it by checking its version:
 ```bash
-   	helm version
+helm version
 ```
 
 c. Install KEDA (Kubernetes Event-Driven Autoscaling):
@@ -75,15 +75,15 @@ Steps:
    
    Commands to install KEDA:
 ```bash
-   	helm repo add kedacore https://kedacore.github.io/charts
-   	helm repo update
-   	helm install keda kedacore/keda --namespace keda --create namespace
+helm repo add kedacore https://kedacore.github.io/charts
+helm repo update
+helm install keda kedacore/keda --namespace keda --create namespace
 ```
 2. Verify KEDA installation:
    
 	To Check if the KEDA operator is running in the Kubernetes cluster.
 ```bash
-	kubectl get pods --namespace keda
+kubectl get pods --namespace keda
 ```
 ### 3. Create Kubernetes Manifest Files:
 
@@ -124,6 +124,6 @@ For Deployment Status:
  To get the health status of the deployment, we can check the status of the deployment and its pods.
 Commands to check deployment and pod status:
 ```bash
-	kubectl get deployment dev
-   	kubectl get pods --selector=app=dev
+kubectl get deployment dev
+kubectl get pods --selector=app=dev
 ```
