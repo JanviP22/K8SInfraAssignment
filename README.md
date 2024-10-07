@@ -92,33 +92,9 @@ a. Defining a Kubernetes Deployment:
 Created a deployment that uses a public Docker image (Node.js app).
 
 Deployment YAML:
-```YAML
-   apiVersion: apps/v1
-   kind: Deployment
-   metadata:
-     name: dev
-   spec:
-     replicas: 2
-     selector:
-       matchLabels:
-         app: dev
-     template:
-       metadata:
-         labels:
-           app: dev
-       spec:
-         containers:
-         - name: nodeapp
-           image: pulivarthijanvi25/nodeapp:v1
-           ports:
-           - containerPort: 3000
-           resources:
-             requests:
-               cpu: "100m"
-               memory: "200Mi"
-             limits:
-               cpu: "200m"
-               memory: "400Mi"
+```bash
+# Create the deployment
+kubectl apply -f dev_deploy.yaml
 ```
 
 b. Created a Kubernetes Service:
