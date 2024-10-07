@@ -106,39 +106,21 @@ Service YAML:
 # Create the deployment
 kubectl apply -f dev_svc.yaml
 ```
-5. Setup KEDA Autoscaling (ScaledObject):
+c. Setup KEDA Autoscaling (ScaledObject):
+
 Steps:
+
 1. Define a ScaledObject:
 Used KEDA to configure autoscaling based on events. Here, I have set up a cron-based scale rule.
 ScaledObject YAML:
-```YAML
-   apiVersion: keda.sh/v1alpha1
-   kind: ScaledObject
-   metadata:
-     name: dev-deployment
-     namespace: default
-   spec:
-     scaleTargetRef:
-       apiVersion: apps/v1
-       kind: Deployment
-       name: dev
-     minReplicaCount: 1
-     maxReplicaCount: 5
-     triggers:
-     - type: cron
-       metadata:
-         timezone: Asia/Kolkata
-         start: 16 * * * *
-         end: 18 * * * *
-         desiredReplicas: "2"
-```
-2. Apply the ScaledObject:
-After defining the ScaledObject, applied it to enable KEDA autoscaling.
 ```bash
-	kubectl apply -f dev-keda.yaml 
+# Create the deployment
+kubectl apply -f dev_keda_so.yaml
 ```
-6. Retrieve Health Status of Deployment:
+### 4. Retrieve Health Status of Deployment:
+
 For Deployment Status:
+
  To get the health status of the deployment, we can check the status of the deployment and its pods.
 Commands to check deployment and pod status:
 ```bash
