@@ -109,10 +109,6 @@ Service YAML:
 kubectl apply -f dev_svc.yaml
 ```
 c. Setup KEDA Autoscaling (ScaledObject):
-
-Steps:
-
-1. Define a ScaledObject:
    
 Used KEDA to configure autoscaling based on events. Here, I have set up a cron-based scale rule.
 
