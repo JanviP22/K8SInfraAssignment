@@ -2,11 +2,13 @@
 
 ## Objective Overview:
 
-Create a script (API or CLI) to automate Kubernetes cluster operations, including:
-1. Connecting to the cluster.
-2. Installing Helm and KEDA (for event-driven autoscaling).
-3. Deploying an application with autoscaling.
-4. Checking the health status of a deployment.
+#### Create a script (API or CLI) to automate Kubernetes cluster operations, including:
+	1. Connecting to the cluster.
+	2. Installing Helm and KEDA (for event-driven autoscaling).
+	3. Deploying an application with autoscaling.
+	4. Checking the health status of a deployment.
+
+
 1. Connect to the Kubernetes Cluster:
 Steps:
 1. Provision the environment:
