@@ -42,10 +42,10 @@ Command to check node status:
 	kubectl get nodes
 ```
 
-2. Install Helm for Kubernetes Package Management:
+### 2. Install Helm for Kubernetes Package Management:
 
 Steps:
-1. Install Helm:
+a. Install Helm:
  Helm is a package manager that simplifies the deployment of applications on Kubernetes. Used it to install tools like KEDA.
 Commands to install Helm:
 ```bash
@@ -55,13 +55,13 @@ Commands to install Helm:
    	sudo apt-get update
    	sudo apt-get install helm
 ```
-2. Verify Helm installation:
+b. Verify Helm installation:
  After installing Helm, verified it by checking its version:
 ```bash
    	helm version
 ```
 
-3. Install KEDA (Kubernetes Event-Driven Autoscaling):
+c. Install KEDA (Kubernetes Event-Driven Autoscaling):
 
 Steps:
 1. Add KEDA Helm repository and install KEDA:
