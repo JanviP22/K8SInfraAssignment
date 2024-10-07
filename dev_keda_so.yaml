@@ -1,0 +1,19 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+ name: dev-deployment
+ namespace: default
+spec:
+ scaleTargetRef:
+   apiVersion: apps/v1
+   kind: Deployment
+   name: dev
+ minReplicaCount: 1
+ maxReplicaCount: 5
+ triggers:
+ - type: cron
+   metadata:
+     timezone: Asia/Kolkata
+     start: 16 * * * *
+     end: 18 * * * *
+     desiredReplicas: "2"
