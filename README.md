@@ -10,23 +10,27 @@
 
 
 1. Connect to the Kubernetes Cluster:
+
 Steps:
+
 1. Provision the environment:
-I used VMware Workstation to create virtual environments. With the help of Vagrant, I provisioned two virtual machines (VMs) running Ubuntu 22.04. One for control plane and one for worker node. Below is the script I used.
-	https://github.com/mialeevs/kube_vagrant.git
+   
+I used VMware Workstation to create virtual environments. With the help of Vagrant, I provisioned two virtual machines (VMs) running Ubuntu 22.04. One for control plane and one for worker node. Below is the script I used ```https://github.com/mialeevs/kube_vagrant.git```
+
 Vagrant command to provision VMs:
 ```bash
    	vagrant up
 ```
+
 2. Install kubectl to interact with Kubernetes:
  Installed the `kubectl` command-line tool to interact with the Kubernetes cluster.
  Commands to install kubectl:
 ```bash
    	sudo apt-get update
    	sudo apt-get install -y apt-transport-https ca-certificates curl gnupg
-  	curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo 	gpg --dearmor - o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+  	curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
    	sudo chmod 644 /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-   	echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] 	https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee 	/etc/apt/sources.list.d/kubernetes.list
+   	echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
    	sudo apt-get update
    	sudo apt-get install -y kubectl
 ```
