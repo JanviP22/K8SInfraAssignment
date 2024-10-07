@@ -15,7 +15,7 @@ Steps:
 
 1. Provision the environment:
    
-I used VMware Workstation to create virtual environments. With the help of Vagrant, I provisioned two virtual machines (VMs) running Ubuntu 22.04. One for control plane and one for worker node. Below is the script I used ```https://github.com/mialeevs/kube_vagrant.git```
+I used VMware Workstation to create virtual environments. With the help of Vagrant, I provisioned two virtual machines (VMs) running Ubuntu 22.04. One for control plane and one for worker node. Below is the repository I used ```https://github.com/mialeevs/kube_vagrant.git```
 
 Vagrant command to provision VMs:
 ```bash
@@ -41,7 +41,9 @@ Command to check node status:
 ```bash
    	kubectl get nodes
 ```
+
 2. Install Helm for Kubernetes Package Management:
+
 Steps:
 1. Install Helm:
  Helm is a package manager that simplifies the deployment of applications on Kubernetes. Used it to install tools like KEDA.
@@ -49,7 +51,7 @@ Commands to install Helm:
 ```bash
    	curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
    	sudo apt-get install apt-transport-https --yes
-   	echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo 	tee 	/etc/apt/sources.list.d/helm-stable-debian.list
+   	echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
    	sudo apt-get update
    	sudo apt-get install helm
 ```
@@ -58,7 +60,9 @@ Commands to install Helm:
 ```bash
    	helm version
 ```
+
 3. Install KEDA (Kubernetes Event-Driven Autoscaling):
+
 Steps:
 1. Add KEDA Helm repository and install KEDA:
    Used Helm to install KEDA, which enables event-driven autoscaling in the cluster.
