@@ -49,6 +49,7 @@ Steps:
 a. Install Helm:
 
  Helm is a package manager that simplifies the deployment of applications on Kubernetes. Used it to install tools like KEDA.
+ 
 Commands to install Helm:
 ```bash
    	curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
@@ -71,6 +72,7 @@ Steps:
 1. Add KEDA Helm repository and install KEDA:
    
    Used Helm to install KEDA, which enables event-driven autoscaling in the cluster.
+   
    Commands to install KEDA:
 ```bash
    	helm repo add kedacore https://kedacore.github.io/charts
@@ -111,7 +113,9 @@ c. Setup KEDA Autoscaling (ScaledObject):
 Steps:
 
 1. Define a ScaledObject:
+   
 Used KEDA to configure autoscaling based on events. Here, I have set up a cron-based scale rule.
+
 ScaledObject YAML:
 ```bash
 # Create the deployment
