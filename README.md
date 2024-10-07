@@ -79,7 +79,7 @@ Steps:
 ```
 2. Verify KEDA installation:
    
-  To Check if the KEDA operator is running in the Kubernetes cluster.
+	To Check if the KEDA operator is running in the Kubernetes cluster.
 ```bash
 	kubectl get pods --namespace keda
 ```
