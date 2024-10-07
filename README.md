@@ -1,5 +1,7 @@
 # Infrastructure Engineer Assignment
-Objective Overview:
+
+## Objective Overview:
+
 Create a script (API or CLI) to automate Kubernetes cluster operations, including:
 1. Connecting to the cluster.
 2. Installing Helm and KEDA (for event-driven autoscaling).
